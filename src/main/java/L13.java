@@ -1,3 +1,8 @@
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Assert;
+
 /**
  * @author zhailiuzhen
  
@@ -18,6 +23,7 @@ Roman numerals are usually written largest to smallest from left to right. Howev
 I can be placed before V (5) and X (10) to make 4 and 9. 
 X can be placed before L (50) and C (100) to make 40 and 90. 
 C can be placed before D (500) and M (1000) to make 400 and 900.
+
 Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
 
 Example 1:
@@ -45,13 +51,59 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
  */
 public class L13 {
+	
+	static Map<Character, Integer> comvertMap = new HashMap<Character, Integer>();
+	static {
+		/**
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+		 * */
+		comvertMap.put('a', 0);
+		comvertMap.put('I', 1);
+		comvertMap.put('V', 5);
+		comvertMap.put('X', 10);
+		comvertMap.put('L', 50);
+		comvertMap.put('C', 100);
+		comvertMap.put('D', 500);
+		comvertMap.put('M', 1000);
+	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		Assert.assertEquals(L13.romanToInt("III"), 3);
+		System.out.print(L13.romanToInt("IV"));
+
+		System.out.print(L13.romanToInt("IX"));
+
+		System.out.print(L13.romanToInt("LVIII"));
+		
+		System.out.print(L13.romanToInt("MCMXCIV"));
 
 	}
+	
+	public static int romanToInt(String s) {
+		char[] tmp = s.toCharArray();
+		int result = 0;
+		for (int i = 0; i < tmp.length; i++) {
+			char tmpchar = tmp[i];
+			char tmpafter = i+1>= tmp.length ?'a':tmp[i+1];
+			if(comvertMap.get(tmpchar) >= comvertMap.get(tmpafter)) {
+				result=result+comvertMap.get(tmpchar);
+			}else {
+				result=result-comvertMap.get(tmpchar);
+			}
+		}
+		
+		return result;
+        
+    }
 
 }
