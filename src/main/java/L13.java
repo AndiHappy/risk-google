@@ -79,13 +79,12 @@ M             1000
 	public static void main(String[] args) {
 		
 		Assert.assertEquals(L13.romanToInt("III"), 3);
-		System.out.print(L13.romanToInt("IV"));
+		System.out.println(L13.romanToInt("IV"));
+		System.out.println(L13.romanToInt("IX"));
 
-		System.out.print(L13.romanToInt("IX"));
-
-		System.out.print(L13.romanToInt("LVIII"));
+		System.out.println(L13.romanToInt("LVIII"));
 		
-		System.out.print(L13.romanToInt("MCMXCIV"));
+		System.out.println(L13.romanToInt("MCMXCIV"));
 
 	}
 	
