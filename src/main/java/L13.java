@@ -1,7 +1,7 @@
+
 import java.util.HashMap;
 import java.util.Map;
 
-import org.junit.Assert;
 
 /**
  * @author zhailiuzhen
@@ -78,7 +78,8 @@ M             1000
 	 */
 	public static void main(String[] args) {
 		
-		Assert.assertEquals(L13.romanToInt("III"), 3);
+		System.out.println(L13.romanToInt("III"));
+
 		System.out.println(L13.romanToInt("IV"));
 		System.out.println(L13.romanToInt("IX"));
 

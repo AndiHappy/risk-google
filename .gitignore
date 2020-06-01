@@ -1,0 +1,10 @@
+
+*.xml
+.idea/.name
+.idea/$PRODUCT_WORKSPACE_FILE$
+.classpath
+*.class
+*.iml
+*.prefs
+.vscode/settings.json
+.project
