@@ -8,3 +8,4 @@
 *.prefs
 .vscode/settings.json
 .project
+src/main/.DS_Store
