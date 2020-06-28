@@ -1,12 +1,36 @@
-import  org.apache.isis.core.commons.ensure.Assert;
+/**
+ * 14. Longest Common Prefix Easy
+ * 
+ * Share Write a function to find the longest common prefix string amongst an
+ * array of strings.
+ * 
+ * If there is no common prefix, return an empty string "".
+ * 
+ * Example 1:
+ * 
+ * Input: ["flower","flow","flight"] Output: "fl" Example 2:
+ * 
+ * Input: ["dog","racecar","car"] Output: "" Explanation: There is no common
+ * prefix among the input strings. Note:
+ * 
+ * All given inputs are in lowercase letters a-z.
+ * 
+ */
+
+
 
 public class L14 {
 
     public static void main(String[] args) {
-        Assert.assertEquals("dd","dd");
-        Assert.assertEquals(L14.longestCommonPrefix(new String[]{}), "");
-        Assert.assertEquals(L14.longestCommonPrefix(new String[]{"abcde"}), "abcde");
-        Assert.assertEquals(L14.longestCommonPrefix(new String[]{"abcde","abcded"}), "abcde");
+        assert "dd".equals("dd");
+        assert L14.longestCommonPrefix(new String[] {}).equals("");
+        assert L14.longestCommonPrefix(new String[] { "abcde"}).equals("abcde");
+        assert L14.longestCommonPrefix(new String[] { "abcde", "abcded" }).equals("abcde");
+
+        // Assert.assertEquals();
+        // Assert.assertEquals(L14.longestCommonPrefix(new String[]{}), "");
+        // Assert.assertEquals(L14.longestCommonPrefix(new String[]{"abcde"}), "abcde");
+        // Assert.assertEquals(L14.longestCommonPrefix(new String[]{"abcde","abcded"}), "abcde");
 
     }
 
