@@ -1,3 +1,5 @@
+package LLittle;
+
 /**
  * 14. Longest Common Prefix Easy
  * 
