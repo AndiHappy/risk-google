@@ -2,8 +2,6 @@ package LLittle;
 
 import java.util.Stack;
 
-import util.ListNode;
-
 public class L20 {
     /**
      * 20. 

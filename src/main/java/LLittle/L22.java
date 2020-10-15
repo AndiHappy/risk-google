@@ -2,9 +2,6 @@ package LLittle;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
-
-import util.ListNode;
 
 public class L22 {
     /**
