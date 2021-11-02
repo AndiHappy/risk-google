@@ -10,6 +10,74 @@ public class Change {
         System.out.println(subarraySum(new int[]{1,1,1},2));
     }
 
+    public static void countKDifference_test(String[] args) {
+        System.out.println(countKDifference(new int[]{1,2,2,1},1));
+    }
+
+    public static int countKDifference(int[] nums, int k) {
+        if(nums == null || nums.length == 0) return 0;
+        HashMap<Integer,Integer> cache = new HashMap<>();
+        int result=0;
+        for (int i = 0; i < nums.length; i++) {
+            int value = nums[i];
+            Integer times = cache.get(value-k);
+            Integer times2 = cache.get(value+k);
+            if(times != null) result+=times;
+            if(times2 != null) result+=times2;
+            cache.put(value,cache.getOrDefault(value,0)+1);
+        }
+        return result;
+    }
+
+    static Set<Integer> powoftwo = new HashSet<>();
+    static {
+        for (int i = 0; i <=22 ; i++) {
+            powoftwo.add((int) Math.pow(2,i));
+        }
+    }
+
+    public static void countPairs_test(String[] args) {
+        int[] tmp = new int[]{32,32,32,32,32,32,32,32,32,32,32,32};
+        Arrays.sort(tmp);
+        System.out.println(Arrays.toString(tmp));
+        System.out.println(countPairs(tmp));
+    }
+
+    public static int countPairs(int[] deliciousness) {
+        Map<Integer,Integer> cache = new HashMap<>();
+        int result =0;
+        for (int i = 0; i < deliciousness.length; i++) {
+
+            int value= deliciousness[i];
+            for (Integer twopower: powoftwo) {
+                Integer times=cache.get(twopower-value);
+                if(times != null) {
+                    result += cache.get(twopower - value);
+                }
+            }
+            cache.put(value,cache.getOrDefault(value,0)+1);
+            System.out.println(result);
+        }
+        return result;
+    }
+
+
+
+    public int maxOperations(int[] nums, int k) {
+        Map<Integer,Integer> cache = new HashMap<>();
+        int result=0;
+        for (int i = 0; i < nums.length; i++) {
+            Integer times = cache.get(k-nums[i]);
+            if(times != null && times > 0){
+                result++;
+                cache.put(k-nums[i],cache.get(k-nums[i])-1);
+            }else{
+                cache.put(nums[i],cache.getOrDefault(nums[i],0)+1);
+            }
+        }
+        return result;
+    }
+
 
     public static boolean findTarget(TreeNode root, int k) {
         Set<Integer> cache = new HashSet<Integer>();

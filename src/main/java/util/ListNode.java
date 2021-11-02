@@ -6,6 +6,10 @@ public class ListNode {
     public ListNode(int i) {
         this.val=i;
     }
+    public ListNode(int i,ListNode next) {
+        this.val=i;
+        this.next=next;
+    }
     public ListNode() {
 
     }
