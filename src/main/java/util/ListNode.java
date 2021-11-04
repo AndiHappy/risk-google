@@ -10,7 +10,10 @@ public class ListNode {
         this.val=i;
         this.next=next;
     }
-    public ListNode() {
+    public ListNode() {}
 
+    @Override
+    public String toString() {
+        return "ListNode{val="+ val+" ,next=" + next+"}" ;
     }
 }
