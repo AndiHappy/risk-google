@@ -5,6 +5,10 @@ import java.util.*;
 
 public class TestMain {
 
+    public static void main(String[] args) {
+        System.out.println(-9/10);
+    }
+
     public ListNode addTwoNumbers_2(ListNode l1, ListNode l2) {
         // We will use sizes to understand which list's nodes should be frozen for a while.
         int s1 = size(l1);
