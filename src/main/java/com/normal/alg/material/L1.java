@@ -1,4 +1,4 @@
-package com.normal.alg.hashmap;
+package com.normal.alg.material;
 
 import java.util.Arrays;
 import java.util.HashMap;
